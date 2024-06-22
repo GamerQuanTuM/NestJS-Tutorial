@@ -1,0 +1,19 @@
+version: '3.8'
+services:
+  postgres:
+    image: postgres:latest
+    container_name: postgres_container
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: nest
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data_nest:/var/lib/postgresql/data
+
+volumes:
+  postgres_data_nest:
+
+# postgresql://root:admin@localhost:5432/nest
+
